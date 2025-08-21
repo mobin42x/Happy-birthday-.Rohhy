@@ -2,23 +2,42 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>تولد پدر 🎉</title>
+  <title>تولد پدر جان 🎉</title>
   <style>
     body {
-      background: #2c211c;
+      background-color: #000;
       color: #fcd34d;
       font-family: sans-serif;
       direction: rtl;
-      padding: 20px;
-      margin: 0;
-    
+      padding: 40px;
+      text-align: right;
+    }
 
-    .controls {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin-top: 20px;
-    
+    .message {
+      max-width: 600px;
+      margin: auto;
+      line-height: 2;
+      font-size: 1.1em;
+    }
+
+    .control {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .play-button {
+      background-color: #fcd34d;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .play-button:hover {
+      background-color: #e6b800;
     }
   </style>
 </head>
@@ -26,87 +45,37 @@
 
 <div class="message">
   <h2>به نام ایزد دانا</h2>
-  <p>سلام<br>
-  پدر جان تولدت را تبریک می‌گویم و از خداوند یگانه می‌خواهم عمری طولانی و عافیت نصیبت بگرداند.</p>
+  <p>سلام</p>
+  <p>پدر جان تولدت را تبریک می‌گویم و از خداوند یگانه می‌خواهم عمری طولانی و عافیت نصیبت بگرداند.</p>
 
   <p>پدر جان، قبلاً‌ها که فیلم‌های رضا عطاران تو تلویزیون پخش می‌شد و ما تماشایش می‌کردیم، همیشه به این فکر بودم که چرا فیلم‌های دیگری را بجایش نمی‌بینیم.  
   تا اینکه یک روز از خودت پرسیدم که چرا انقدر رضا عطاران را دوست داری، و تو با یک لبخند به شباهت‌تان اشاره کردی.</p>
 
-  <p>الان که دارم فکر می‌کنم، می‌بینم تو خیلی بیشتر از چیزی که فکر می‌کردم شبیه‌اش هستی نه تنها از قیافه، بلکه تو همون‌قدر مردمی و خوش‌خنده هستی.  
+  <p>الان که دارم فکر می‌کنم، می‌بینم تو خیلی بیشتر از چیزی که فکر می‌کردم شبیه‌اش هستی—نه تنها از قیافه، بلکه تو همون‌قدر مردمی و خوش‌خنده هستی.  
   با طنز منحصر به فردت خنده به لب همه می‌آری، و همون‌قدر بدون چارچوب خاصی زندگی می‌کنی.</p>
 
-  <p>اما یه تفاوت اصیل دارین؛ ایشون همیشه فیلم بازی می‌کنه،  
-  ولی تو همیشه این‌طور زندگی می‌کردی و زندگی خواهی کرد.</p>
+  <p>اما یه تفاوت اصیل دارین؛ ایشون همیشه فیلم بازی می‌کنه، ولی تو همیشه این‌طور زندگی می‌کردی و زندگی خواهی کرد.</p>
 
   <p style="margin-top: 20px;">تقدیم با عشق<br>  
   <strong>مبین محمدی</strong></p>
 </div>
 
-<div class="player">
+<div class="control">
   <audio id="audio" src="main/tavalode-mane.mp3"></audio>
-
-  <div class="progress">
-    <input type="range" id="seekBar" value="0">
-    <div class="time">
-      <span id="currentTime">00:00</span>
-      <span id="duration">00:00</span>
-    </div>
-  </div>
-
-  <div class="control
-    <button class="play-button" id="playBtn">بزن قدش✋🏻</butto>
-  
-  </div>
+  <button class="play-button" id="playBtn">✋🏻 بزن قدش</button>
 </div>
 
 <script>
-  window.onload = function () {
-    const audio = document.getElementById('audio');
-    const seekBar = document.getElementById('seekBar');
-    const currentTime = document.getElementById('currentTime');
-    const duration = document.getElementById('duration');
-    const playBtn = document.getElementById('playBtn');
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('playBtn');
 
-    audio.addEventListener('loadedmetadata', () => {
-      seekBar.max = audio.duration;
-      duration.textContent = formatTime(audio.duration);
-    });
-
-    audio.addEventListener('timeupdate', () => {
-      seekBar.value = audio.currentTime;
-      currentTime.textContent = formatTime(audio.currentTime);
-    });
-
-    seekBar.addEventListener('input', () => {
-      audio.currentTime = seekBar.value;
-    });
-
-    playBtn.onclick = function () {
-      if (audio.paused) {
-        audio.play();
-        this.textContent = 'برکاننا';
-      } else {
-        audio.pause();
-        this.textContent = 'بزن قدش✋🏻';
-      }
-    };
-
-    document.getElementById('skipBack').onclick = () => audio.currentTime -= 10;
-    document.getElementById('skipForward').onclick = () => audio.currentTime += 10;
-
-    document.getElementById('loopBtn').onclick = function () {
-      audio.loop = !audio.loop;
-      this.style.opacity = audio.loop ? '1' : '0.5';
-    };
-
-    document.getElementById('shuffleBtn').onclick = () => {
-      alert("فعلاً فقط یه آهنگ داریم 😅");
-    };
-
-    function formatTime(sec) {
-      const m = Math.floor(sec / 60).toString().padStart(2, '0');
-      const s = Math.floor(sec % 60).toString().padStart(2, '0');
-      return `${m}:${s}`;
+  playBtn.onclick = function () {
+    if (audio.paused) {
+      audio.play();
+      this.textContent = 'برکاننا';
+    } else {
+      audio.pause();
+      this.textContent = '✋🏻 بزن قدش';
     }
   };
 </script>
