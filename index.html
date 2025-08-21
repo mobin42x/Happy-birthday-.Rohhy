@@ -114,11 +114,8 @@
   </div>
 
   <div class="controls">
-    <button id="loopBtn">🔁</button>
-    <button id="skipBack">⏮️</button>
-    <button class="play-button" id="playBtn">▶️</button>
-    <button id="skipForward">⏭️</button>
-    <button id="shuffleBtn">🔀</button>
+    <button class="play-button" id="playBtn">"Page1.png"</button>
+
   </div>
 </div>
 
@@ -147,10 +144,10 @@
     playBtn.onclick = function () {
       if (audio.paused) {
         audio.play();
-        this.textContent = '⏸️';
+        this.textContent = 'Page2.png';
       } else {
         audio.pause();
-        this.textContent = '▶️';
+        this.textContent = 'Page1.png';
       }
     };
 
