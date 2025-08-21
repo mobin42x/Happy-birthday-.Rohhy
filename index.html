@@ -71,18 +71,21 @@
   <p>تقدیم با عشق  
   <br>مبین محمدی</p>
 
-  <audio id="birthdayAudio" src="main/tavalode-mane.mp3" autoplay loop></audio>
-  <button onclick="toggleAudio()">پخش / توقف آهنگ 🎵</button>
+  <audio id="birthdayAudio" src="main/tavalode-mane.mp3"></audio>
+<button onclick="toggleAudio()">پخش / توقف آهنگ 🎵</button>
 
-  <script>
-    const audio = document.getElementById('birthdayAudio');
-    function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
+<script>
+  const audio = document.getElementById('birthdayAudio');
+
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play().catch(error => {
+        console.log("پخش نشد:", error);
+      });
+    } else {
+      audio.pause();
     }
-  </script>
+  }
+</script>
 </body>
 </html>
