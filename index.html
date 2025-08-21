@@ -2,90 +2,34 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>تولد پدر جان 🎂</title>
-
-  <!-- بارگذاری فونت فارسی -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Vazirmatn', sans-serif;
-      background-color: #fff8f0;
-      color: #444;
-      text-align: center;
-      padding: 50px;
-      direction: rtl;
-    }
-
-    h1 {
-      font-size: 2em;
-      color: #ff4081;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.1em;
-      line-height: 2;
-      margin: 10px auto;
-      max-width: 600px;
-    }
-
-    button {
-      background-color: #ff4081;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 30px;
-    }
-
-    button:hover {
-      background-color: #e91e63;
-    }
-  </style>
-</head>
-<body>
-  <h1>🎉 تولدت مبارک پدر جان 🎉</h1>
-
-  <p>به نام ایزد دانا</p>
-  <p>سلام</p>
-  <p>پدر جان تولدت را تبریک می‌گویم  
-  و از خداوند یگانه می‌خواهم عمری طولانی و عافیت نصیبت بگرداند.</p>
-
-  <p>پدر جان، قبلاً که فیلم‌های رضا عطاران تو تلویزیون پخش می‌شد و ما تماشایش می‌کردیم،  
-  همیشه به این فکر بودم که چرا فیلم‌های دیگری را بجایش نمی‌بینیم...  
-  تا اینکه یک روز از خودت پرسیدم که چرا انقدر رضا عطاران را دوست داری،  
-  و تو با یک لبخند به شباهت‌تان اشاره کردی.</p>
-
-  <p>الان که دارم فکر می‌کنم، می‌بینم تو خیلی بیشتر از چیزی که فکر می‌کردم شبیه‌اشی—  
-  نه تنها از قیافه، بلکه تو همون‌قدر مردمی و خوش‌خنده هستی.  
-  با طنز منحصر به فردت، خنده به لب همه می‌آری،  
-  و همون‌قدر بدون چارچوب خاصی زندگی می‌کنی.</p>
-
-  <p>اما یه تفاوت اصیل دارین؛  
-  ایشون همیشه فیلم بازی می‌کنه،  
-  ولی تو همیشه این‌طور زندگی می‌کردی و زندگی خواهی کرد.</p>
-
-  <p>تقدیم با عشق  
-  <br>مبین محمدی</p>
-
-  <audio id="birthdayAudio" src="main/tavalode-mane.mp3"></audio>
-<button onclick="toggleAudio()">پخش / توقف آهنگ 🎵</button>
-
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>پخش تولدی</title>
+  <title>تولد پدر 🎉</title>
   <style>
     body {
       background: #2c211c;
       color: #fcd34d;
       font-family: sans-serif;
-      text-align: center;
-      padding: 40px;
+      direction: rtl;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .message {
+      background: #3a2c25;
+      color: #fcd34d;
+      padding: 20px;
+      border-radius: 12px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      text-align: right;
+    }
+
+    .message h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .message p {
+      margin-bottom: 15px;
     }
 
     .player {
@@ -93,24 +37,8 @@
       margin: auto;
     }
 
-    .controls {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    button {
-      background: none;
-      border: none;
-      color: #fcd34d;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
     .progress {
-      width: 100%;
-      margin: 20px 0;
+      margin-bottom: 10px;
     }
 
     input[type="range"] {
@@ -122,10 +50,57 @@
       display: flex;
       justify-content: space-between;
       font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      background: none;
+      border: none;
+      color: #fcd34d;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .play-button {
+      font-size: 40px;
+      background: #fcd34d;
+      color: #2c211c;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
     }
   </style>
 </head>
 <body>
+
+<div class="message">
+  <h2>به نام ایزد دانا</h2>
+  <p>سلام<br>
+  پدر جان تولدت را تبریک می‌گویم و از خداوند یگانه می‌خواهم عمری طولانی و عافیت نصیبت بگرداند.</p>
+
+  <p>پدر جان، قبلاً‌ها که فیلم‌های رضا عطاران تو تلویزیون پخش می‌شد و ما تماشایش می‌کردیم، همیشه به این فکر بودم که چرا فیلم‌های دیگری را بجایش نمی‌بینیم.  
+  تا اینکه یک روز از خودت پرسیدم که چرا انقدر رضا عطاران را دوست داری، و تو با یک لبخند به شباهت‌تان اشاره کردی.</p>
+
+  <p>الان که دارم فکر می‌کنم، می‌بینم تو خیلی بیشتر از چیزی که فکر می‌کردم شبیه‌اشی—نه تنها از قیافه، بلکه تو همون‌قدر مردمی و خوش‌خنده هستی.  
+  با طنز منحصر به فردت خنده به لب همه می‌آری، و همون‌قدر بدون چارچوب خاصی زندگی می‌کنی.</p>
+
+  <p>اما یه تفاوت اصیل دارین؛ ایشون همیشه فیلم بازی می‌کنه،  
+  ولی تو همیشه این‌طور زندگی می‌کردی و زندگی خواهی کرد.</p>
+
+  <p style="margin-top: 20px;">تقدیم با عشق<br>  
+  <strong>مبین محمدی</strong></p>
+</div>
 
 <div class="player">
   <audio id="audio" src="main/tavalode-mane.mp3"></audio>
@@ -139,71 +114,21 @@
   </div>
 
   <div class="controls">
-    <button onclick="loopAudio()">🔁</button>
-    <button onclick="skip(-10)">⏮️</button>
-    <button onclick="toggleAudio()">▶️</button>
-    <button onclick="skip(10)">⏭️</button>
-    <button onclick="shuffle()">🔀</button>
+    <button id="loopBtn">🔁</button>
+    <button id="skipBack">⏮️</button>
+    <button class="play-button" id="playBtn">▶️</button>
+    <button id="skipForward">⏭️</button>
+    <button id="shuffleBtn">🔀</button>
   </div>
 </div>
 
-<script>
-  const audio = document.getElementById('audio');
-  const seekBar = document.getElementById('seekBar');
-  const currentTime = document.getElementById('currentTime');
-  const duration = document.getElementById('duration');
-
-  audio.addEventListener('loadedmetadata', () => {
-    seekBar.max = audio.duration;
-    duration.textContent = formatTime(audio.duration);
-  });
-
-  audio.addEventListener('timeupdate', () => {
-    seekBar.value = audio.currentTime;
-    currentTime.textContent = formatTime(audio.currentTime);
-  });
-
-  seekBar.addEventListener('input', () => {
-    audio.currentTime = seekBar.value;
-  });
-
-  function toggleAudio() {
-    if (audio.paused) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
-  }
-
-  function skip(seconds) {
-    audio.currentTime += seconds;
-  }
-
-  function loopAudio() {
-    audio.loop = !audio.loop;
-  }
-
-  function shuffle() {
-    alert("tavalode-mane.mp3");
-  }
-
-  function formatTime(sec) {
-    const m = Math.floor(sec / 60).toString().padStart(2, '0');
-    const s = Math.floor(sec % 60).toString().padStart(2, '0');
-    return `${m}:${s}`;
-  }
-</script>
-
-</body>
-</html>
-</body>
-</html>
 <script>
   window.onload = function () {
     const audio = document.getElementById('audio');
     const seekBar = document.getElementById('seekBar');
     const currentTime = document.getElementById('currentTime');
     const duration = document.getElementById('duration');
+    const playBtn = document.getElementById('playBtn');
 
     audio.addEventListener('loadedmetadata', () => {
       seekBar.max = audio.duration;
@@ -219,37 +144,35 @@
       audio.currentTime = seekBar.value;
     });
 
-    function toggleAudio() {
+    playBtn.onclick = function () {
       if (audio.paused) {
         audio.play();
+        this.textContent = '⏸️';
       } else {
         audio.pause();
+        this.textContent = '▶️';
       }
-    }
+    };
 
-    function skip(seconds) {
-      audio.currentTime += seconds;
-    }
+    document.getElementById('skipBack').onclick = () => audio.currentTime -= 10;
+    document.getElementById('skipForward').onclick = () => audio.currentTime += 10;
 
-    function loopAudio() {
+    document.getElementById('loopBtn').onclick = function () {
       audio.loop = !audio.loop;
-    }
+      this.style.opacity = audio.loop ? '1' : '0.5';
+    };
 
-    function shuffle() {
+    document.getElementById('shuffleBtn').onclick = () => {
       alert("فعلاً فقط یه آهنگ داریم 😅");
-    }
+    };
 
     function formatTime(sec) {
       const m = Math.floor(sec / 60).toString().padStart(2, '0');
       const s = Math.floor(sec % 60).toString().padStart(2, '0');
       return `${m}:${s}`;
     }
-
-    // اگر خواستی دکمه‌ها رو هم وصل کنیم:
-    document.getElementById('playBtn').onclick = toggleAudio;
-    document.getElementById('skipBack').onclick = () => skip(-10);
-    document.getElementById('skipForward').onclick = () => skip(10);
-    document.getElementById('loopBtn').onclick = loopAudio;
-    document.getElementById('shuffleBtn').onclick = shuffle;
   };
 </script>
+
+</body>
+</html>
