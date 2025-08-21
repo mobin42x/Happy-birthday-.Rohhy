@@ -2,119 +2,80 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>تولدت مبارک پدر جان</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تولدت مبارک بابا</title>
   <style>
     body {
       font-family: "Vazir", sans-serif;
-      direction: rtl;
-      background-color: #fff8f0;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-      line-height: 2;
+      background-color: #fdf6f0;
       color: #333;
+      text-align: center;
+      padding: 30px;
+      line-height: 2;
     }
 
-    h2 {
-      color: #d81b60;
+    .message {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    #playBtn img {
-      width: 60px;
-      cursor: pointer;
+    .highfive-section {
+      margin-top: 60px;
     }
 
-    #message {
-      display: none;
-      font-size: 22px;
-      color: #e91e63;
-      font-weight: bold;
-      margin-top: 10px;
+    .highfive-text {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #555;
     }
 
     #highfive {
-      width: 50px;
+      width: 70px;
       cursor: pointer;
-      vertical-align: middle;
       transition: transform 0.2s ease;
     }
 
-    .text-box {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    #highfive:hover {
+      transform: scale(1.2);
+    }
+
+    .celebration {
+      font-size: 24px;
+      color: #d81b60;
+      font-weight: bold;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <h2>🎂 تولدت مبارک پدر جان 🎂</h2>
-
-  <!-- دکمه پخش/ایست -->
-  <div id="playBtn">
-    <img src="Page1.png" alt="پخش">
-  </div>
-  <audio id="audio" src="tavalode-name.mp3"></audio>
-
-  <script>
-    const audio = document.getElementById("audio");
-    const playBtn = document.getElementById("playBtn");
-
-    playBtn.onclick = function () {
-      if (audio.paused) {
-        audio.play();
-        playBtn.innerHTML = '<img src="Page2.png" alt="ایست">';
-      } else {
-        audio.pause();
-        audio.currentTime = 0;
-        playBtn.innerHTML = '<img src="Page1.png" alt="پخش">';
-      }
-    };
-
-    audio.onended = function () {
-      playBtn.innerHTML = '<img src="Page1.png" alt="پخش">';
-    };
-  </script>
-
-  <div class="text-box">
-    <p>به نام ایزد دانا</p>
-    <p>سلام</p>
-    <p>پدر جان تولدت را تبریک می‌گویم  
-    و از خداوند یگانه می‌خواهم عمری طولانی و عافیت نصیبت بگرداند.</p>
-    <p>پدر جان، قبلاً که فیلم‌های رضا عطاران توی تلویزیون پخش می‌شد و ما تماشایش می‌کردیم،  
-    همیشه به این فکر بودم که چرا فیلم‌های دیگری را بجایش نمی‌بینیم.  
-    تا اینکه یک روز از خودت پرسیدم که چرا انقدر رضا عطاران را دوست داری،  
-    و تو با یک لبخند به شباهت‌تان اشاره کردی.</p>
-    <p>الان که دارم فکر می‌کنم، می‌بینم تو خیلی بیشتر از چیزی که فکر می‌کردم شبیه‌اشی.  
-    نه تنها از قیافه، بلکه تو همون‌قدر مردمی و خوش‌خنده هستی.  
-    با طنز منحصر به فردت خنده به لب همه می‌آری،  
-    و همون‌قدر بدون چارچوب خاصی زندگی می‌کنی.</p>
-    <p>اما یه تفاوت اصیل دارین؛  
-    ایشون همیشه فیلم بازی می‌کنه،  
-    ولی تو همیشه این‌طور زندگی می‌کردی و زندگی خواهی کرد.</p>
-    <p>تقدیم با عشق  
-    <br>مبین محمدی</p>
+  <div class="message">
+    <p>پدر جان، قبلاً تو کلیپ‌های رضا عطاران توی تلویزیون می‌خندیدی، حالا تو تمام‌چیزای توی اینترنت دنبال خنده‌ای. ولی من می‌خوام یه چیزی برات بسازم که فقط مال خودمون باشه.</p>
+    <p>الان که دارم فکر می‌کنم، تو خیلی بیشتر از چیزی که فکر می‌کردم شجاعی. نه تنها از بیماری، بلکه از تنهایی، از سکوت، از اینکه کسی نفهمه چی تو دلت می‌گذره.</p>
+    <p>اما یه چیزی اصل باقی می‌مونه: این‌همه همیشه فیلم نگاه می‌کردی، ولی تو صحنه‌های زندگی خودت قهرمان می‌مونی و زندگی رو ادامه خواهی داد.</p>
+    <p>تقدیم به تو<br>– مبین محمدی</p>
   </div>
 
-  <hr style="margin: 40px 0;">
-
-  <!-- بخش های‌فایو -->
-  <p style="font-size:20px;">
-    با انگشت بزن قدش ✋🏻
-    <img src="hand.png" id="highfive" alt="دست">
-  </p>
-
-  <div id="message">🎉 تولدت مبارک 🎉</div>
+  <div class="highfive-section">
+    <p class="highfive-text">با انگشت بزن قدش ✋🏻</p>
+    <div id="highfiveBox">
+      <img src="hand.png" id="highfive" alt="دست">
+    </div>
+  </div>
 
   <script>
-    document.getElementById('highfive').addEventListener('click', function() {
-      document.getElementById('message').style.display = 'block';
-      this.style.transform = 'scale(1.2)';
-      setTimeout(() => { this.style.transform = 'scale(1)'; }, 200);
+    document.getElementById('highfive').addEventListener('click', function () {
+      const box = document.getElementById('highfiveBox');
+      box.innerHTML = '<p class="celebration">🎉 تولدت مبارک بابا 🎉</p>';
     });
   </script>
 
