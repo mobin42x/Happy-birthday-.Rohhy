@@ -198,3 +198,58 @@
 </html>
 </body>
 </html>
+<script>
+  window.onload = function () {
+    const audio = document.getElementById('audio');
+    const seekBar = document.getElementById('seekBar');
+    const currentTime = document.getElementById('currentTime');
+    const duration = document.getElementById('duration');
+
+    audio.addEventListener('loadedmetadata', () => {
+      seekBar.max = audio.duration;
+      duration.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      seekBar.value = audio.currentTime;
+      currentTime.textContent = formatTime(audio.currentTime);
+    });
+
+    seekBar.addEventListener('input', () => {
+      audio.currentTime = seekBar.value;
+    });
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function skip(seconds) {
+      audio.currentTime += seconds;
+    }
+
+    function loopAudio() {
+      audio.loop = !audio.loop;
+    }
+
+    function shuffle() {
+      alert("فعلاً فقط یه آهنگ داریم 😅");
+    }
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60).toString().padStart(2, '0');
+      const s = Math.floor(sec % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    // اگر خواستی دکمه‌ها رو هم وصل کنیم:
+    document.getElementById('playBtn').onclick = toggleAudio;
+    document.getElementById('skipBack').onclick = () => skip(-10);
+    document.getElementById('skipForward').onclick = () => skip(10);
+    document.getElementById('loopBtn').onclick = loopAudio;
+    document.getElementById('shuffleBtn').onclick = shuffle;
+  };
+</script>
