@@ -74,18 +74,127 @@
   <audio id="birthdayAudio" src="main/tavalode-mane.mp3"></audio>
 <button onclick="toggleAudio()">پخش / توقف آهنگ 🎵</button>
 
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>پخش تولدی</title>
+  <style>
+    body {
+      background: #2c211c;
+      color: #fcd34d;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .player {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: #fcd34d;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .progress {
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: #fcd34d;
+    }
+
+    .time {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="player">
+  <audio id="audio" src="main/tavalode-mane.mp3"></audio>
+
+  <div class="progress">
+    <input type="range" id="seekBar" value="0">
+    <div class="time">
+      <span id="currentTime">00:00</span>
+      <span id="duration">00:00</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="loopAudio()">🔁</button>
+    <button onclick="skip(-10)">⏮️</button>
+    <button onclick="toggleAudio()">▶️</button>
+    <button onclick="skip(10)">⏭️</button>
+    <button onclick="shuffle()">🔀</button>
+  </div>
+</div>
+
 <script>
-  const audio = document.getElementById('birthdayAudio');
+  const audio = document.getElementById('audio');
+  const seekBar = document.getElementById('seekBar');
+  const currentTime = document.getElementById('currentTime');
+  const duration = document.getElementById('duration');
+
+  audio.addEventListener('loadedmetadata', () => {
+    seekBar.max = audio.duration;
+    duration.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    seekBar.value = audio.currentTime;
+    currentTime.textContent = formatTime(audio.currentTime);
+  });
+
+  seekBar.addEventListener('input', () => {
+    audio.currentTime = seekBar.value;
+  });
 
   function toggleAudio() {
     if (audio.paused) {
-      audio.play().catch(error => {
-        console.log("پخش نشد:", error);
-      });
+      audio.play();
     } else {
       audio.pause();
     }
   }
+
+  function skip(seconds) {
+    audio.currentTime += seconds;
+  }
+
+  function loopAudio() {
+    audio.loop = !audio.loop;
+  }
+
+  function shuffle() {
+    alert("tavalode-mane.mp3");
+  }
+
+  function formatTime(sec) {
+    const m = Math.floor(sec / 60).toString().padStart(2, '0');
+    const s = Math.floor(sec % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  }
 </script>
+
+</body>
+</html>
 </body>
 </html>
