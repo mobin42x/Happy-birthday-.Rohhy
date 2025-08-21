@@ -59,17 +59,15 @@
     <p>الان که دارم فکر می‌کنم، می‌بینم تو خیلی بیشتر از چیزی که فکر می‌کردم شبیه‌اشی. نه تنها از قیافه، بلکه تو همون‌قدر مردمی و خوش‌خنده هستی. با طنز منحصر به فردت خنده به لب همه میاری، و همون‌قدر بدون چارچوب خاصی زندگی می‌کنی.</p>
     <p>اما یه تفاوت اصیل دارین؛ ایشون همیشه فیلم بازی می‌کنه، ولی تو همیشه اینطور زندگی می‌کردی و زندگی خواهی کرد.</p>
     <p>تقدیم با عشق<br>مبین محمدی</p>
-  </div>
-
-  <div class="تولدت مبارک">
-    <p id="handTrigger" class="hand-word">با انگشت بزن قدش
-    ✋🏻</p>
-  </div>
-
+  
   <script>
-    document.getElementById('handTrigger').addEventListener('click', function () {
-      const trigger = document.getElementById('handTrigger');
-      trigger.outerHTML = '<img src="hand.png" alt="دست" class="hand-image">';
+  playBtn.onclick = function () {
+      if (audio.paused) {
+        audio.play();
+        this.textContent = '⏸️';
+      } else {
+        audio.pause();
+        this.textContent = '▶️';
     });
   </script>
 
